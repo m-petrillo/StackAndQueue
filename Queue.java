@@ -10,5 +10,28 @@ package stackandqueue.StackAndQueue;
  * @author Mike
  */
 public class Queue {
+ 
+    PriorityQueue<String> q = new PriorityQueue<String>();
     
+    q.offer("first");
+    q.offer("second");
+    q.offer("third");
+    
+    System.out.printf("%s", q)
+    System.out.println;
+    
+    public enqueue()
+    {
+        
+    }
+    
+    public dequeue()
+    {
+        
+    }
+    
+    public peek()
+    {
+        System.out.printf("%s", q.peek());
+    }
 }

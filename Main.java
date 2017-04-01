@@ -11,4 +11,15 @@ package stackandqueue.StackAndQueue;
  */
 public class Main {
     
+    
+    Stack myStack = new Stack(8);
+    myStack.push("T");
+    myStack.push("I");
+    myStack.push("T");
+    myStack.push("S");
+    myStack.push("&");
+    myStack.push("A");
+    myStack.push("S");
+    myStack.push("S");
+    System.out.println(myStack.peek());
 }
