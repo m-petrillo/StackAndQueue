@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package stackandqueue.StackAndQueue;
 
 /**
@@ -11,27 +12,64 @@ package stackandqueue.StackAndQueue;
  */
 public class Queue {
  
-    PriorityQueue<String> q = new PriorityQueue<String>();
+    private Node front;
+    private Node back;
     
-    q.offer("first");
-    q.offer("second");
-    q.offer("third");
+    private Node temp;
     
-    System.out.printf("%s", q)
-    System.out.println;
-    
-    public enqueue()
+    public Queue(){
+        front = null;
+        back = null;
+        
+    }    
+    public void enqueue(Node newNode)
     {
+       if( front == null && back == null) 
+       {
+            back = front = newNode;
+       }
+        else
+       {
+            back.next = newNode;
+            back = newNode;
+            
+       } 
         
     }
+   
     
-    public dequeue()
+    public Node dequeue()
     {
+        if(front == null && back == null) { 
+        System.out.println("nothing to dequeue.\nqueue is empty."); 
+        return null;
+        }
         
+        else 
+        {
+         Node oldTail = back;
+        Node temp;
+        temp = back.prev;
+        temp.next = null;
+        back = temp;
+        return oldTail;
+        
+        }
+       
     }
     
-    public peek()
+    public void peek()
     {
-        System.out.printf("%s", q.peek());
+        System.out.printf("%s", front.data);
+    }
+    
+    public void print()
+    {
+    Node temp = front;
+    while ( temp != null)
+    {
+    System.out.print(temp.data);    
+    temp = temp.next;
+    }
     }
 }
